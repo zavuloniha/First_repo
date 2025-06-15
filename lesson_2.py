@@ -343,8 +343,59 @@ try:
 except ValueError:
     print(f"{age} is not a number")
 
+#задания
+
+is_next = None
+num = int(input("Enter the number of points: "))
+if num >= 83:
+   is_next = True
+else:
+ is_next = False
 
 
+work_experience = int(input("Enter your full work experience in years: "))
+if work_experience<=5 and work_experience>1:
+    developer_type = "Middle"
+elif work_experience<=1:
+    developer_type = "Junior"
+else:
+    developer_type = "Senior"
 
+
+num = int(input("Enter a number: "))
+if num > 0:
+    if num % 2 == 1:
+        result = "Positive odd number"
+    else :
+        result = "Positive even number"
+elif num < 0:
+    result = "Negative number"
+else:
+    result = "It is zero"
+
+
+num = int(input("Enter the integer (0 to 100): "))
+sum = 0
+while num >= 0:
+    sum = sum + num
+    num = num -1 
+print(sum)
+
+
+message = "Never argue with stupid people, they will drag you down to their level and then beat you with experience."
+search = "r"
+result = 0
+for char in message:
+    if char == search:
+        result += 1
+print(result)
+
+
+pool = 1000
+quantity = int(input("Enter the number of mailings: "))
+try:
+    chunk = pool//quantity
+except ZeroDivisionError:
+    print('Divide by zero completed!')
 
 

@@ -1,0 +1,31 @@
+###
+def to_camel_case(text):
+    # Спліт рядок за підкресленням '_'
+    words = text.split('_')
+    # Першому слову залишаємо маленьку літеру, іншим - кожна з великої букви.
+    camel_case = words[0].lower() + ''.join(word.title() for word in words[1:])
+    return camel_case
+
+user_status = "User_IS_Authenticated"  # Приклад вводу з підкресленнями
+result = to_camel_case(user_status)
+print(result)  # Результат: userIsAuthenticated
+###
+
+
+###
+rf читайте конспект ;)
+Dmytro Dev
+21:46
+bad_words = ["idiot", "be", "day"]
+bad_words_str = "|".join(bad_words)
+pattern = re.compile(rf"\b({bad_words_str})\b", flags=re.IGNORECASE)
+
+res = re.sub(pattern, "*****", post)
+print(res)
+###
+
+###
+def replace_with_starts(bad_word):
+    print(bad_word)
+    return len(bad_word.group()) * "*"
+###
