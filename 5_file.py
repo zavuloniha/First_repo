@@ -1,13 +1,14 @@
-def factorial(n):
-    if n < 2:
-        return 1
-    else:
-        return n * factorial(n - 1)
+from datetime import datetime
 
-
-def number_of_groups(n, k):
-   return fact1 = factorial (n)
-   return fact2 = factorial(n-k)
-   return fact3 = factorial (k)
+current_date = datetime.today()
+f_current_date = current_date.date()
+def get_days_from_today(date):
     
-print(number_of_groups(5,6))
+    formated_date = datetime.strptime(date, "%Y-%m-%d")
+    date_for_counting = formated_date.date()
+
+    return date_for_counting 
+
+print(get_days_from_today('2036-5-25'))
+
+print(f_current_date)
