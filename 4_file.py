@@ -1,18 +1,27 @@
-from datetime import datetime
+german_word = 'straße'  # В нижньому регістрі
+search_word = 'STRASSE'  # В верхньому регістрі
 
-current_date = datetime.today()
-f_current_date = current_date.date()
-def get_days_from_today(date):
-    formated_date = datetime.strptime(date, "%Y-%m-%d")
-    date_for_counting = formated_date.date()
-    #difference = current_date - formated_date
-    difference = f_current_date - date_for_counting
-    #results = difference.date()
-    #return results
-    return difference
-print(get_days_from_today('2036-5-25'))
+# Порівняння за допомогою lower()
+lower_comparison = german_word.lower() == search_word.lower()
 
-print(f_current_date)
+# Порівняння за допомогою casefold()
+casefold_comparison = german_word.casefold() == search_word.casefold()
+
+print(f"Порівняння з lower(): {lower_comparison}")
+print(f"Порівняння з casefold(): {casefold_comparison}")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

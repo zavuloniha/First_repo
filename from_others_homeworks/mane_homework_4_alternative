@@ -1,0 +1,46 @@
+from parser import parse_input
+from contacts_actions import add_contact, change_contact
+
+def main():
+    contacts = {}
+    print("Welcome to the assistant bot!")
+    try: 
+        while True:
+            user_input = input("Enter a command: ").strip().lower()
+            command, *args = parse_input(user_input)
+
+            if command in ["close", "exit"]:
+                print("Good bye!")
+                break
+
+            elif command == "hello":
+                print("How can I help you?")
+            elif command == "add":
+                print(add_contact(args, contacts))    
+            elif command == "change":
+                print(change_contact(args, contacts)) 
+            elif command == "all":
+                print(contacts)       
+            else:
+                print("Invalid command.")
+    except: 
+        if args < 2: 
+           ValueError: not enough values to unpack (expected 2, got 0)
+
+if __name__ == "__main__":
+    main()
+
+"""
+Бот повинен перебувати в нескінченному циклі, чекаючи команди користувача.
+Бот завершує свою роботу, якщо зустрічає слова: "close" або "exit".
+Бот не чутливий до регістру введених команд.
+Бот приймає команди:
+"hello", та відповідає у консоль повідомленням "How can I help you?"
+"add username phone". За цією командою бот зберігає у пам'яті, наприклад у словнику, новий контакт. Користувач вводить ім'я username та номер телефону phone, обов'язково через пробіл.
+"change username phone". За цією командою бот зберігає в пам'яті новий номер телефону phone для контакту username, що вже існує в записнику.
+"phone username" За цією командою бот виводить у консоль номер телефону для зазначеного контакту username.
+"all". За цією командою бот виводить всі збереженні контакти з номерами телефонів у консоль.
+"close", "exit" за будь-якою з цих команд бот завершує свою роботу після того, як виведе у консоль повідомлення "Good bye!" та завершить своє виконання.
+Логіка команд реалізована в окремих функціях і ці функції приймають на вхід один або декілька рядків та повертають рядок.
+Вся логіка взаємодії з користувачем реалізована у функції main, всі print та input відбуваються тільки там
+"""

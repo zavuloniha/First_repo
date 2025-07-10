@@ -1,0 +1,13 @@
+# for args in args :
+#             if command == "add":
+#                 try:
+#                    return func(*args, **kwargs)
+#                 except ValueError:
+#                    return "Give me name and phone please."
+#             if args == "change" and kwargs[0] in contacts:
+#                 try:
+#                     return func(*args, **kwargs)    
+#                 except KeyError: 
+#                     return "Give me name correct name"
+
+#     return inner
